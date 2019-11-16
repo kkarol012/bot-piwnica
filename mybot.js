@@ -1,12 +1,9 @@
+require('dotenv').config();
 const odzywki = require('./odzywki.js')
 const imienneOdzywki = require('./imienneOdzywki.js')
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
-
-const env = require('./env.json')
-
-
 
 client.on("ready", () => {
 	console.log("started!")
@@ -29,8 +26,5 @@ client.on("message", (message) => {
 		return
 
 })
-if (env.env == "test") {
-	client.login(env.token)
-} else {
-	client.login(process.env.token)
-}
+
+client.login(process.env.token)

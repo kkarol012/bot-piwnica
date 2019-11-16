@@ -4,7 +4,7 @@ const imienneOdzywki = require('./imienneOdzywki.js')
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
-const auth = require('./auth.json')
+const process = require('./auth.json')
 
 client.on("ready", () => {
 	console.log("started!")
@@ -28,4 +28,4 @@ client.on("message", (message) => {
 
 })
 
-client.login(auth.token);
+client.login(process.env.token);

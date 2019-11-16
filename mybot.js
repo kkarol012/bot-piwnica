@@ -4,7 +4,9 @@ const imienneOdzywki = require('./imienneOdzywki.js')
 const Discord = require("discord.js")
 const client = new Discord.Client()
 
-const process = require('./auth.json')
+const env = require('./env.json')
+
+
 
 client.on("ready", () => {
 	console.log("started!")
@@ -27,5 +29,8 @@ client.on("message", (message) => {
 		return
 
 })
-
-client.login(process.env.token);
+if (env.env == "test") {
+	client.login(env.token)
+} else {
+	client.login(process.env.token)
+}

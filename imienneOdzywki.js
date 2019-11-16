@@ -11,12 +11,12 @@ const checkMessage = (s) => {
 	return matches.filter(v => v != null).length > 0 ? true : false;
 }
 function licz(message) {
-    var num = message.content.replace(/^\D+/g, '');
-    if (typeof num != 'number') {
+    var num = parseInt(message.content.replace(/^\D+/g, ''))
+    if (num < 1) {
         message.channel.send('Nie ma takiej liczby');
         return
     }
-    for (var i = 0; (i <= num && i <= 3); i++) {
+    for (var i = 1; (i <= num && i <= 3); i++) {
         message.channel.send(i);
     }
     if (num > i) {

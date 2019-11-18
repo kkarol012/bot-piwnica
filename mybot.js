@@ -24,11 +24,9 @@ client.on("message", (message) => {
 	}, 3000)
 	if (odzywki.shortResponses(message)) 
 		return
-	if (imienneOdzywki.imienneOdzywki(message)) {
-		console.log('gsdfsa')
+	if (imienneOdzywki.imienneOdzywki(message))
 		return
-
-	}
+	
 	if (wykopApi.handleWykop(message))
 		return
 	message.channel.send(dontUndarstand);

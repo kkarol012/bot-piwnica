@@ -22,6 +22,8 @@ function fetchMemes(channel) {
 function handleWykop(message) {
     console.log('handleWykop: func')
 
+    console.log(process.env.prefix)
+
     var str = message.content.toLowerCase();
 
     if (!str.startsWith(process.env.prefix) || message.author.bot) return false;

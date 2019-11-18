@@ -29,8 +29,13 @@ client.on("message", (message) => {
 	
 	if (wykopApi.handleWykop(message))
 		return
-	message.channel.send(dontUndarstand);
-
+	nieRozumie(message)
 })
+
+function nieRozumie(message) {
+	var str = message.content.toLowerCase();
+	if (str.startsWith(process.env.prefix)) 
+		message.channel.send(dontUndarstand);
+}
 
 client.login(process.env.token)

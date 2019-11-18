@@ -20,11 +20,13 @@ function fetchMemes(channel) {
 }
 
 function handleWykop(message) {
-    console.log('handleWykop:')
+    console.log('handleWykop: func')
 
     var str = message.content.toLowerCase();
 
     if (!str.startsWith(process.env.prefix) || message.author.bot) return false;
+    console.log('handleWykop: after logic')
+
     if (str.match(/meme/)) {
         fetchMemes(message.channel)
     } else {

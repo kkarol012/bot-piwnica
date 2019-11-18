@@ -22,11 +22,19 @@ client.on("message", (message) => {
 	setTimeout(() => {
 		talkedRecently.delete(message.author.id);
 	}, 3000)
+
+	console.log('short b4')
+
 	if (odzywki.shortResponses(message)) 
 		return
+
+	console.log('imienneOdzywki b4')
+
 	if (imienneOdzywki.imienneOdzywki(message))
 		return
-	
+
+	console.log('handleWykop b4')
+
 	if (wykopApi.handleWykop(message))
 		return
 	message.channel.send(dontUndarstand);

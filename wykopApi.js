@@ -20,6 +20,8 @@ function fetchMemes(channel) {
 }
 
 function handleWykop(message) {
+    console.log('handleWykop:')
+
     var str = message.content.toLowerCase();
 
     if (!str.startsWith(process.env.prefix) || message.author.bot) return false;

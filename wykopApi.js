@@ -12,6 +12,7 @@ function fetchMemes(channel) {
         channel.send({files: [url]})
     })
     .catch((error) => {
+        console.log(error)
         channel.send('Coś się... coś się popsuło')
     })
 }

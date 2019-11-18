@@ -44,35 +44,33 @@ function shortResponses (message) {
 	} else if (str.match(/wiedźmin/)) {
 		message.channel.send(">gierki");
 	} else if (str.match(/zajeb mnie/)) {
-		message.channel.send(`${message.author} nie mów tak :(`);
+		message.channel.send(`${message.author} nie mów tak :(`)
 	} else if (str.match(/zajebcie mnie/)) {
-		message.channel.send(`${message.author} nie mów tak :(`);
+		message.channel.send(`${message.author} nie mów tak :(`)
 	} else if (str.match(/zapierdolcie mnie/)) {
-		message.channel.send(`${message.author} nie mów tak :(`);
+		message.channel.send(`${message.author} nie mów tak :(`)
 	} else if (str.match(/jestem gównem/)) {
-		message.channel.send(`${message.author} nie mów tak :(`);
+		message.channel.send(`${message.author} nie mów tak :(`)
 	} else if (str.match(/jestem guwnem/)) {
-		message.channel.send(`${message.author} nie mów tak :(`);
+		message.channel.send(`${message.author} nie mów tak :(`)
 	} else if (str.match(/jestem gownem/)) {
-		message.channel.send(`${message.author} nie mów tak :(`);
+		message.channel.send(`${message.author} nie mów tak :(`)
 	} else if (str.match(/na chuj ja żyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/na huj ja żyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/na chuj ja zyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/na huj ja zyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/po chuj ja żyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/po huj ja żyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/po chuj ja zyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
+		message.channel.send(`${message.author} nie smuć sie :(`)
 	} else if (str.match(/po huj ja zyje/)) {
-		message.channel.send(`${message.author} nie smuć sie :(`);
-	} else if (str.match(/i na koniec/)) {
-		message.channel.send("chuj wam w dupe");
+		message.channel.send(`${message.author} nie smuć sie :(`)
     } else {
         return false;
     }

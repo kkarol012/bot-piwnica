@@ -1,8 +1,6 @@
 const seconds = 1000
 const minutes = seconds * 60
 const hours = minutes * 60
-const prefix = "vi"
-const dontUndarstand = 'Nie rozumiem sempai ;_;'
 
 const checkMessage = (s) => {
 	let matches = [];
@@ -66,7 +64,7 @@ function przypominaj(str, channel, author) {
 
 function imienneOdzywki(message) {
     var str = message.content.toLowerCase();
-    if (!str.startsWith(prefix) || message.author.bot) return false;
+    if (!str.startsWith(process.env.prefix) || message.author.bot) return false;
     
 	if (checkMessage(message.content)) {
 		message.channel.send(`Wie pan co panie ${message.author}, bardzo brzydko!`);
@@ -127,8 +125,8 @@ function imienneOdzywki(message) {
 	} else if (str.match(/przypomnij/)) {
 		przypominaj(str, message.channel, message.author);
 	} else {
-        message.channel.send(dontUndarstand);
-    }
+		return false
+	}
     return true;
 }
 

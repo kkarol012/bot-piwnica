@@ -1,6 +1,7 @@
 require('dotenv').config();
 const odzywki = require('./odzywki.js')
 const imienneOdzywki = require('./imienneOdzywki.js')
+const wykopApi = require('./wykopApi.js')
 
 const Discord = require("discord.js")
 const client = new Discord.Client()
@@ -10,6 +11,7 @@ client.on("ready", () => {
 });
 
 const talkedRecently = new Set()
+const dontUndarstand = 'Nie rozumiem sempai ;_;'
 
 client.on("message", (message) => {
 	if (message.author.bot) 
@@ -22,8 +24,14 @@ client.on("message", (message) => {
 	}, 3000)
 	if (odzywki.shortResponses(message)) 
 		return
-	if (imienneOdzywki.imienneOdzywki(message))
+	if (imienneOdzywki.imienneOdzywki(message)) {
+		console.log('gsdfsa')
 		return
+
+	}
+	if (wykopApi.handleWykop(message))
+		return
+	message.channel.send(dontUndarstand);
 
 })
 

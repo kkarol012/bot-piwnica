@@ -11,7 +11,7 @@ client.on("ready", () => {
 });
 
 const talkedRecently = new Set()
-const dontUndarstand = 'Nie rozumiem sempai ;_;'
+const dontUndarstand = 'Nie rozumiem sempai ;_; Aby utawić niedziałającą po 30 minutach przypominajkę użyj komendy `przypomnij`. Jeśli chcesz mema napisz `meme` lub `trollmeme`'
 
 client.on("message", (message) => {
 	if (message.author.bot) 

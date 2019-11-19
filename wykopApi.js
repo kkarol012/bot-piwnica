@@ -1,9 +1,9 @@
 const axios = require('axios')
 require('dotenv').config();
 
-function fetchMemes(channel) {
+function fetchMemes(query, channel) {
     const page = Math.floor(Math.random() * 10)
-    axios.post('https://a2.wykop.pl/Search/Entries/page/' + page + '/appkey/' + process.env.wykop_key + '?q=meme&data=compacted&return=embed', {
+    axios.post('https://a2.wykop.pl/Search/Entries/page/' + page + '/appkey/' + process.env.wykop_key + '?q=%23' + query + '&data=compacted&return=embed', {
     })
     .then((res) => {
         const url = getMemeFromResponse(res.data.data, 0)
@@ -17,7 +17,7 @@ function fetchMemes(channel) {
 
 function getMemeFromResponse(data, infLoopPrevention) {
     let item = Math.floor(Math.random() * data.length)
-    if (data[item].embed === undefined && infLoopPrevention <= 25) {    
+    if (data[item].embed === undefined && infLoopPrevention <= 25 || data[item].embed.type !== 'image') {    
         return getMemeFromResponse(data, ++infLoopPrevention)
     }
     return data[item].embed.url
@@ -28,8 +28,10 @@ function handleWykop(message) {
     var str = message.content.toLowerCase();
 
     if (!str.startsWith(process.env.prefix) || message.author.bot) return false;
-    if (str.match(/meme/)) {
-        fetchMemes(message.channel)
+    if (str.match(/trollmeme/)) {
+        fetchMemes('hanuszki', message.channel)
+    } else if (str.match(/meme/)) {
+        fetchMemes('humorobrazkowy', message.channel)
     } else {
         return false;
     }

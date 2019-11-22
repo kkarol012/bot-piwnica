@@ -1,13 +1,6 @@
-const responseObject = {
-	"ping pong": "cing ciang ciong",
-	"ping": "pong",
-	"pong": "ping",
-};
 function shortResponses (message) {
     var str = message.content.toLowerCase();
-    if (responseObject[str]) {
-		message.channel.send(responseObject[str]);
-	} else if (str.match(/\bliga/)) {
+	if (str.match(/\bliga/)) {
 		message.channel.send(">gierki");
 	} else if (str.match(/\blige/)) {
 		message.channel.send(">gierki");

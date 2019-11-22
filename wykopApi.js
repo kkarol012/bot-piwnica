@@ -24,14 +24,11 @@ function getMemeFromResponse(data, infLoopPrevention) {
 
 }
 
-function handleWykop(message) {
-    var str = message.content.toLowerCase();
-
-    if (!str.startsWith(process.env.prefix) || message.author.bot) return false;
-    if (str.match(/trollmeme/)) {
-        fetchMemes('hanuszki', message.channel)
-    } else if (str.match(/meme/)) {
-        fetchMemes('humorobrazkowy', message.channel)
+function handleWykop(command, channel) {
+    if (command === "trollmeme") {
+        fetchMemes('hanuszki', channel)
+    } else if (command === "meme") {
+        fetchMemes('humorobrazkowy', channel)
     } else {
         return false;
     }

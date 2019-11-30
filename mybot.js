@@ -46,6 +46,7 @@ client.on("message", (message) => {
 	if (odzywki.shortResponses(message))
 		return
 	console.log(jestImienna)
+	console.log(process.env.prefix)
 
 	if (!jestImienna) {
 		return

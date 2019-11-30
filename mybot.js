@@ -45,6 +45,7 @@ client.on("message", (message) => {
 
 	if (odzywki.shortResponses(message))
 		return
+	console.log(jestImienna)
 
 	if (!jestImienna) {
 		return

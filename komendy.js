@@ -3,10 +3,11 @@ const cleverChat = require('./cleverChat.js')
 
 function wykonajKomende(commandArray, channel, author) {
 	if (wykopApi.handleWykop(commandArray, channel)) {
+		return true;
 	} else if (commandArray[1] === "licz" && commandArray[2] === "do") {
 		licz(commandArray[3], channel)
 	} else if (commandArray[1] === "rozmowa") {
-		cleverChat.startKonwersacji(channel, author)
+		cleverChat.startKonwersacji(channel, author.id)
 	} else {
 		return false
 	}

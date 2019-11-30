@@ -19,6 +19,7 @@ const talkedRecently = new Set()
 const dontUndarstand = 'Nie rozumiem sempai ;_; Jeśli chcesz mema napisz `meme` lub `trollmeme`'
 
 client.on("message", (message) => {
+	console.log('yep we can read it')
 	if (message.author.bot)
 		return
 	if (talkedRecently.has(message.author.id))

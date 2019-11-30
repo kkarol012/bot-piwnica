@@ -19,7 +19,6 @@ const talkedRecently = new Set()
 const dontUndarstand = 'Nie rozumiem sempai ;_; Jeśli chcesz mema napisz `meme` lub `trollmeme`'
 
 client.on("message", (message) => {
-	console.log('yep we can read it')
 	if (message.author.bot)
 		return
 	if (talkedRecently.has(message.author.id))
@@ -33,30 +32,23 @@ client.on("message", (message) => {
 	var messageArray = message.content.toLowerCase().split(" ");
 	var jestImienna = messageArray[0] === process.env.prefix
 	if (cleverChat.czyTrwaRozmowaZCleverBotem(message.author, message.channel)) {
-		console.log('chatbot')
-
 		if (jestImienna && messageArray[1] === "staph"){
 			global.inConversation.delete(message.author.id)
 		} else {
 			cleverChat.rozmawiaj(message)
 		}
 	}
-	console.log('short')
 
 	if (odzywki.shortResponses(message))
 		return
-	console.log(jestImienna)
-	console.log(process.env.prefix)
 
 	if (!jestImienna) {
 		return
 	}
-	console.log('imienna odzywka')
 
 	if (imienneOdzywki.imienneOdzywki(message))
 		return
 
-	console.log('komenda')
 
 	if (komendy.wykonajKomende(messageArray, message.channel, message.author))
 		return

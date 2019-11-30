@@ -2,7 +2,7 @@ const wykopApi = require('./wykopApi.js')
 const cleverChat = require('./cleverChat.js')
 
 function wykonajKomende(commandArray, channel, author) {
-	if (wykopApi.handleWykop(commandArray, channel)) {
+	if (wykopApi.handleWykop(commandArray[1], channel)) {
 		return true;
 	} else if (commandArray[1] === "licz" && commandArray[2] === "do") {
 		licz(commandArray[3], channel)

@@ -7,7 +7,7 @@ function wykonajKomende(commandArray, channel, author) {
 	} else if (commandArray[1] === "licz" && commandArray[2] === "do") {
 		licz(commandArray[3], channel)
 	} else if (commandArray[1] === "rozmowa") {
-		cleverChat.startKonwersacji(channel, author.id)
+		cleverChat.startKonwersacji(channel, author)
 	} else {
 		return false
 	}

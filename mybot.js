@@ -34,6 +34,8 @@ client.on("message", (message) => {
 	if (cleverChat.czyTrwaRozmowaZCleverBotem(message.author, message.channel)) {
 		if (jestImienna && messageArray[1] === "staph"){
 			global.inConversation.delete(message.author.id)
+			message.channel.send("Dziękuję za miłą rozmowę")
+			return
 		} else {
 			cleverChat.rozmawiaj(message)
 		}

@@ -10,11 +10,13 @@ function rozmawiaj(message) {
     axios.get(url, {
         params: {
             key: process.env.clever_bot_key,
-            input: input
+            input: input,
+            cs: kluczKonversacji
         }
     })
         .then((res) => {
-            global.inConversation.set(message.author.id, [message.channel.id, res.conversation_id])
+            global.inConversation.set(message.author.id, [message.channel.id, res.data.cs])
+
             message.channel.send(res.data.output)
         })
         .catch((error) => {

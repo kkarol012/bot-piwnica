@@ -1,6 +1,6 @@
 const wykopApi = require('./wykopApi.js')
 const cleverChat = require('./cleverChat.js')
-const RicardoApi = require('./ricardoApi.js')
+const RicardoApi = require('./RicardoApi.js')
 
 function wykonajKomende(commandArray, channel, author) {
 	if (wykopApi.handleWykop(commandArray[1], channel)) {

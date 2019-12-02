@@ -14,8 +14,6 @@ function getRandomRicardoGif(channel) {
         }
     })
     .then((res) => {
-        console.log(res)
-
         url = res.data.data[0].images.original.url
         channel.send({files: [url]})
     })

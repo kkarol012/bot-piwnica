@@ -1,6 +1,7 @@
 const wykopApi = require('./wykopApi.js')
 const cleverChat = require('./cleverChat.js')
 const RicardoApi = require('./RicardoApi.js')
+const BibleGenerator = require('./BibleGenerator.js')
 
 function wykonajKomende(commandArray, channel, author) {
 	if (wykopApi.handleWykop(commandArray[1], channel)) {
@@ -11,6 +12,8 @@ function wykonajKomende(commandArray, channel, author) {
 		cleverChat.startKonwersacji(channel, author)
 	} else if (commandArray[1] === "ricardo") {
 		RicardoApi.getRandomRicardoGif(channel)
+	} else if (commandArray[1] === "biblia") {
+		BibleGenerator.getRandomQuote(channel)
 	} else {
 		return false
 	}

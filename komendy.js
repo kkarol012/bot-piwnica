@@ -2,6 +2,7 @@ const wykopApi = require('./wykopApi.js')
 const cleverChat = require('./cleverChat.js')
 const RicardoApi = require('./RicardoApi.js')
 const HolyBooks = require('./HolyBooks.js')
+const YoutubeApi = require('./YoutubeApi.js')
 
 function wykonajKomende(commandArray, channel, author) {
 	if (wykopApi.handleWykop(commandArray[1], channel)) {
@@ -16,6 +17,8 @@ function wykonajKomende(commandArray, channel, author) {
 		HolyBooks.getRandomBibleQuote(channel)
 	} else if (commandArray[1] === "koran") {
 		HolyBooks.getRandomQranQuote(channel)
+	} else if (commandArray[1] === "youtube") {
+		YoutubeApi.searchForMovie(commandArray, channel)
 	} else {
 		return false
 	}

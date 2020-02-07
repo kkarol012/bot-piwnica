@@ -8,11 +8,15 @@ function searchForMovie(searchArray, channel) {
         params: {
             key: process.env.google_api_key,
             part: 'snippet',
+            safeSearch: 'none',
+            type: 'video',
             q: query,
             maxResults: '1'
         }
     })
     .then((res) => {
+        console.log(res.data.items.length)
+        console.log(res.data.items[0])
         if (res.data.items.length === 0) {
             return channel.send('nie ma takich filmów')
         }

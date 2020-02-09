@@ -3,8 +3,9 @@ const cleverChat = require('./cleverChat.js')
 const RicardoApi = require('./RicardoApi.js')
 const HolyBooks = require('./HolyBooks.js')
 const YoutubeApi = require('./YoutubeApi.js')
+const UserData = require('./UserData.js')
 
-function wykonajKomende(commandArray, channel, author) {
+function wykonajKomende(commandArray, channel, author, message) {
 	if (wykopApi.handleWykop(commandArray[1], channel)) {
 		return true;
 	} else if (commandArray[1] === "licz" && commandArray[2] === "do") {
@@ -19,6 +20,10 @@ function wykonajKomende(commandArray, channel, author) {
 		HolyBooks.getRandomQranQuote(channel)
 	} else if (commandArray[1] === "youtube") {
 		YoutubeApi.searchForMovie(commandArray, channel)
+	} else if (commandArray[1] === "get") {
+		UserData.getAllValues(channel, author, message)
+	} else if (commandArray[1] === "set") {
+		UserData.setValue(commandArray, channel, author)
 	} else {
 		return false
 	}

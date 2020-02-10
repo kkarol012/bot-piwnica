@@ -51,8 +51,7 @@ client.on("message", (message) => {
 	if (imienneOdzywki.imienneOdzywki(message))
 		return
 
-
-	if (komendy.wykonajKomende(messageArray, message.channel, message.author))
+	if (komendy.wykonajKomende(messageArray, message.channel, message.author, message))
 		return
 	nieRozumie(message)
 })

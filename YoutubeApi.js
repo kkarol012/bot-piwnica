@@ -15,8 +15,6 @@ function searchForMovie(searchArray, channel) {
         }
     })
     .then((res) => {
-        console.log(res.data.items.length)
-        console.log(res.data.items[0])
         if (res.data.items.length === 0) {
             return channel.send('nie ma takich filmów')
         }

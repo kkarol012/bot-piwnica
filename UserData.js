@@ -26,8 +26,8 @@ async function setValue(searchArray, channel, author) {
 
 async function insertValues(searchArray, channel, author) {
     searchArray.splice(0, 2)
-    searchArray.splice(0, 1)
     const varName = searchArray[0]
+    searchArray.splice(0, 1)
     const value = searchArray.join(' ')
     const res = await db.query(createUser, [author.id])
     let userId

@@ -15,12 +15,7 @@ CREATE TABLE public.user_variables
 
 TABLESPACE pg_default;
 
-ALTER TABLE public.user_variables
-    OWNER to postgres;
-
 -- Index: fki_user_to_user_id
-
--- DROP INDEX public.fki_user_to_user_id;
 
 CREATE INDEX fki_user_to_user_id
     ON public.user_variables USING btree

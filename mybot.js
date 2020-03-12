@@ -1,6 +1,4 @@
-require('dotenv').config();
-const odzywki = require('./odzywki.js')
-const imienneOdzywki = require('./imienneOdzywki.js')
+require('dotenv').config()
 const komendy = require('./komendy.js')
 const cleverChat = require('./cleverChat.js')
 
@@ -41,15 +39,9 @@ client.on("message", (message) => {
 		}
 	}
 
-	if (odzywki.shortResponses(message))
-		return
-
 	if (!jestImienna) {
 		return
 	}
-
-	if (imienneOdzywki.imienneOdzywki(message))
-		return
 
 	if (komendy.wykonajKomende(messageArray, message.channel, message.author, message))
 		return

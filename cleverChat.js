@@ -18,12 +18,16 @@ function rozmawiaj(message) {
         clearTimeout(global.inConversation.get(message.author.id)[2])
         timer = setTimerTodelete
         global.inConversation.set(message.author.id, [message.channel.id, res.data.cs, timer])
-        text = res.data.output
-        message.channel.send(decodeURIComponent( escape( text ) ))
+        if (res.data.output) {
+            text = res.data.output
+            message.channel.send(decodeURIComponent( escape( text ) ))
+        } else {
+            message.channel.send(res.data)
+        }
     })
     .catch((error) => {
         console.log(error)
-        channel.send('Coś się... coś się popsuło')
+        message.channel.send('Coś się... coś się popsuło')
     })
 
 }

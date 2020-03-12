@@ -14,21 +14,18 @@ function rozmawiaj(message) {
             cs: kluczKonversacji
         }
     })
-    .then((res) => {
-        clearTimeout(global.inConversation.get(message.author.id)[2])
-        timer = setTimerTodelete
-        global.inConversation.set(message.author.id, [message.channel.id, res.data.cs, timer])
-        if (res.data.output) {
+        .then((res) => {
+            clearTimeout(global.inConversation.get(message.author.id)[2])
+            timer = setTimerTodelete
+            global.inConversation.set(message.author.id, [message.channel.id, res.data.cs, timer])
             text = res.data.output
-            message.channel.send(decodeURIComponent( escape( text ) ))
-        } else {
+            message.channel.send(decodeURIComponent(escape(text)))
             message.channel.send(res.data)
-        }
-    })
-    .catch((error) => {
-        console.log(error)
-        message.channel.send('Coś się... coś się popsuło')
-    })
+        })
+        .catch((error) => {
+            console.log(error)
+            message.channel.send('Coś się... coś się popsuło')
+        })
 
 }
 

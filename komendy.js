@@ -1,6 +1,6 @@
 const wykopApi = require('./wykopApi.js')
 const cleverChat = require('./cleverChat.js')
-const RicardoApi = require('./RicardoApi.js')
+const GiphyApi = require('./GiphyApi.js')
 const HolyBooks = require('./HolyBooks.js')
 const YoutubeApi = require('./YoutubeApi.js')
 const UserData = require('./UserData.js')
@@ -14,7 +14,9 @@ function wykonajKomende(commandArray, channel, author, message) {
 	} else if (commandArray[1] === "rozmowa") {
 		cleverChat.startKonwersacji(channel, author)
 	} else if (commandArray[1] === "ricardo") {
-		RicardoApi.getRandomRicardoGif(channel)
+		GiphyApi.getRandomRicardoGif(channel)
+	} else if (commandArray[1] === "kotek") {
+		GiphyApi.getRandomCatGif(channel)
 	} else if (commandArray[1] === "biblia") {
 		HolyBooks.getRandomBibleQuote(channel)
 	} else if (commandArray[1] === "koran") {

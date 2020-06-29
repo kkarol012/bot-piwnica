@@ -5,6 +5,7 @@ const HolyBooks = require('./HolyBooks.js')
 const YoutubeApi = require('./YoutubeApi.js')
 const UserData = require('./UserData.js')
 const CovidApi = require('./CovidApi.js')
+const Pooling = require('./Pooling.js')
 
 function wykonajKomende(commandArray, channel, author, message) {
 	if (wykopApi.handleWykop(commandArray[1], channel)) {
@@ -29,6 +30,8 @@ function wykonajKomende(commandArray, channel, author, message) {
 		UserData.setValue(commandArray, channel, author)
 	} else if (commandArray[1] === "covid") {
 		CovidApi.getStats(channel, commandArray)
+	} else if (commandArray[1] === "ankieta") {
+		Pooling.makePool(channel, commandArray)
 	} else {
 		return false
 	}

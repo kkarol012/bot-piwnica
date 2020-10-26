@@ -32,6 +32,10 @@ function wykonajKomende(commandArray, channel, author, message) {
 		CovidApi.getStats(channel, commandArray)
 	} else if (commandArray[1] === "ankieta") {
 		Pooling.makePool(channel, commandArray)
+	} else if (commandArray[1] === "help") {
+		channel.send("Hej, każdą komendę poprzedzaj przedrostkiem vi." +
+"Lista dostępnych komend:" +
+"`meme`, `trollmeme`, `licz` .. `do`, `rozmowa`, `ricardo`, `kotek`, `biblia`, `koran`, `youtube`, `get`, `set`, `covid`, `ankieta`, `help`");
 	} else {
 		return false
 	}

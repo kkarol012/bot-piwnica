@@ -6,6 +6,7 @@ const YoutubeApi = require("./YoutubeApi.js");
 const UserData = require("./UserData.js");
 const CovidApi = require("./CovidApi.js");
 const Pooling = require("./Pooling.js");
+const HardcodedGifs = require("./HardcodedGifs.js");
 
 function wykonajKomende(commandArray, channel, author, message) {
   if (wykopApi.handleWykop(commandArray[1], channel)) {
@@ -19,7 +20,7 @@ function wykonajKomende(commandArray, channel, author, message) {
   } else if (commandArray[1] === "kotek") {
     GiphyApi.getRandomCatGif(channel);
   } else if (commandArray[1] === "waifu") {
-    GiphyApi.getWaifuGif(channel);
+    channel.send(HardcodedGifs.getRandomGif(HardcodedGifs.waifuGifs));
   } else if (commandArray[1] === "biblia") {
     HolyBooks.getRandomBibleQuote(channel);
   } else if (commandArray[1] === "koran") {
@@ -38,7 +39,7 @@ function wykonajKomende(commandArray, channel, author, message) {
     channel.send(
       "Hej, każdą komendę poprzedzaj przedrostkiem vi." +
         "Lista dostępnych komend:" +
-        "`meme`, `trollmeme`, `licz` .. `do`, `rozmowa`, `ricardo`, `kotek`, `biblia`, `koran`, `youtube`, `get`, `set`, `covid`, `ankieta`, `help`"
+        "`meme`, `trollmeme`, `licz` .. `do`, `rozmowa`, `ricardo`, `kotek`, `biblia`, `koran`, `youtube`, `get`, `set`, `covid`, `ankieta`, `waifu`, `help`"
     );
   } else {
     return false;

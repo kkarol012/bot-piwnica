@@ -16,6 +16,11 @@ const waifuGifs = [
   "https://media1.giphy.com/media/XSdGizUGZnoJMhCC1q/giphy.gif?cid=790b7611ee4c04eb0d56e423de81748833d790f80534bb16&rid=giphy.gif&ct=g",
 ];
 
+const fightGifs = [
+  "https://media3.giphy.com/media/EKPDaVZ3yi2OoP9XjG/giphy.gif?cid=790b76115feabe878700016f6d88c080c8d53adc7e05f205&rid=giphy.gif&ct=g",
+  "https://media1.giphy.com/media/GPTx2yBmC3sGs3xCbq/giphy.gif?cid=790b7611e34b2735e50c3f5945b0a889dd3d8579f082b95c&rid=giphy.gif&ct=g",
+  "https://media4.giphy.com/media/oA9uAcB6uOrUuk4SDb/giphy.gif?cid=790b7611923600e27d2fdc2df326d9acc895cd6577c6fa24&rid=giphy.gif&ct=g",
+];
 function getRandomGif(array) {
   return array[Math.floor(Math.random() * array.length)];
 }

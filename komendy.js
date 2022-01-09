@@ -21,6 +21,8 @@ function wykonajKomende(commandArray, channel, author, message) {
     GiphyApi.getRandomCatGif(channel);
   } else if (commandArray[1] === "waifu") {
     channel.send(HardcodedGifs.getRandomGif(HardcodedGifs.waifuGifs));
+  } else if (commandArray[1] === "pobij") {
+    channel.send(HardcodedGifs.getRandomGif(HardcodedGifs.waifuGifs));
   } else if (commandArray[1] === "biblia") {
     HolyBooks.getRandomBibleQuote(channel);
   } else if (commandArray[1] === "koran") {

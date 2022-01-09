@@ -2,10 +2,14 @@ const axios = require("axios");
 require("dotenv").config();
 
 function getRandomRicardoGif(channel) {
-  getGif("ricardo_milos", channel);
+  getGif("ricardo%20milos", channel);
 }
 function getRandomCatGif(channel) {
-  getGif("cute_cat", channel);
+  getGif("cute%20cat", channel);
+}
+
+function getWaifuGif(channel) {
+  getGif("arcane%20vi", channel);
 }
 
 function getGif(query, channel) {
@@ -30,4 +34,5 @@ function getGif(query, channel) {
 module.exports = {
   getRandomRicardoGif: getRandomRicardoGif,
   getRandomCatGif: getRandomCatGif,
+  getWaifuGif: getWaifuGif,
 };

@@ -22,7 +22,7 @@ function wykonajKomende(commandArray, channel, author, message) {
   } else if (commandArray[1] === "waifu") {
     channel.send(HardcodedGifs.getRandomGif(HardcodedGifs.waifuGifs));
   } else if (commandArray[1] === "pobij") {
-    channel.send(HardcodedGifs.getRandomGif(HardcodedGifs.waifuGifs));
+    channel.send(HardcodedGifs.getRandomGif(HardcodedGifs.fightGifs));
   } else if (commandArray[1] === "biblia") {
     HolyBooks.getRandomBibleQuote(channel);
   } else if (commandArray[1] === "koran") {
@@ -41,7 +41,7 @@ function wykonajKomende(commandArray, channel, author, message) {
     channel.send(
       "Hej, każdą komendę poprzedzaj przedrostkiem vi." +
         "Lista dostępnych komend:" +
-        "`meme`, `trollmeme`, `licz` .. `do`, `rozmowa`, `ricardo`, `kotek`, `biblia`, `koran`, `youtube`, `get`, `set`, `covid`, `ankieta`, `waifu`, `help`"
+        "`meme`, `trollmeme`, `licz` .. `do`, `rozmowa`, `ricardo`, `kotek`, `biblia`, `koran`, `youtube`, `get`, `set`, `covid`, `ankieta`, `waifu`, `pobij`, `help`"
     );
   } else {
     return false;

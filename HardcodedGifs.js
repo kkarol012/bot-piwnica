@@ -26,6 +26,7 @@ function getRandomGif(array) {
 }
 
 module.exports = {
+  fightGifs,
   waifuGifs,
   getRandomGif,
 };

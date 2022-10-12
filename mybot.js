@@ -17,11 +17,21 @@ const talkedRecently = new Set();
 const dontUndarstand =
   "Nie rozumiem sempai ;_; Jeśli chcesz mema napisz `meme` lub `trollmeme`";
 const TROLL_IDS = process.env.TROLL_IDS.split(";");
+const FORBIDDEN = [
+  "https://tenor.com/view/shit-ton-poop-rhino-gif-15151913",
+  "biodr",
+  "bioder",
+];
 
 client.on("message", (message) => {
   if (message.author.bot) return;
-
   if (TROLL_IDS.includes(message.author.id)) {
+    FORBIDDEN.forEach((el) => {
+      if (message.content.includes(el)) {
+        message.delete().catch(console.error);
+        return;
+      }
+    });
     const random = Math.random() * 100 + 1;
     if (random < Number(process.env.TROLL_CHANCE)) {
       message.delete().catch(console.error);

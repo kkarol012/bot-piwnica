@@ -13,7 +13,7 @@ function getGif(query, channel) {
   axios
     .get(url, {
       params: {
-        api_key: process.env.giphy_api_key,
+        api_key: process.env.GIPHY_API_KEY,
         tag: query,
         limit: "1",
       },

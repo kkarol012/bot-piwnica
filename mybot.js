@@ -45,7 +45,7 @@ client.on("message", (message) => {
   }, 3000);
 
   var messageArray = message.content.toLowerCase().split(" ");
-  var jestImienna = messageArray[0] === process.env.prefix;
+  var jestImienna = messageArray[0] === process.env.PREFIX;
   if (cleverChat.czyTrwaRozmowaZCleverBotem(message.author, message.channel)) {
     if (jestImienna && messageArray[1] === "staph") {
       global.inConversation.delete(message.author.id);
@@ -74,7 +74,7 @@ client.on("message", (message) => {
 
 function nieRozumie(message) {
   var str = message.content.toLowerCase();
-  if (str.startsWith(process.env.prefix)) message.channel.send(dontUndarstand);
+  if (str.startsWith(process.env.PREFIX)) message.channel.send(dontUndarstand);
 }
 
-client.login(process.env.token);
+client.login(process.env.TOKEN);
